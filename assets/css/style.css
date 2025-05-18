@@ -1,0 +1,278 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      display: flex;
+      height: 100vh;
+      position: relative; /* importante para posicionar content absolute */
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background-color: #1f2937;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding-top: 20px;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 20%;
+      font-size: 20px;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      color: #d1d5db;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .nav-link i {
+      margin-right: 10px;
+      font-size: 18px;
+    }
+
+    .nav-link:hover {
+      background-color: #374151;
+      color: white;
+    }
+
+    /* Main */
+    .main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Topbar */
+    .navbar {
+      background-color: white;
+      padding: 15px 30px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    .user-menu {
+      position: relative;
+    }
+
+    .user-button {
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .user-button i {
+      font-size: 14px;
+    }
+
+    .dropdown {
+      position: absolute;
+      right: 0;
+      top: 45px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: none;
+      flex-direction: column;
+      min-width: 160px;
+      z-index: 10;
+    }
+
+    .dropdown a {
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.3s;
+    }
+
+    .dropdown a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .user-menu.open .dropdown {
+      display: flex;
+    }
+
+    /* Conteúdo com position absolute, centralizado */
+    .content {
+      position: absolute;
+      top: 60px; /* para ficar abaixo da navbar */
+      left: 220px; /* largura da sidebar */
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: calc(100% - 240px); /* um pouco menor que full para evitar scroll */
+      max-width: 1200px;
+      height: calc(100% - 80px);
+      border-radius: 8px;
+      padding: 30px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: auto;
+      z-index: 1;
+    }
+
+    
+    .cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.card {
+  width: 270px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #333;
+}
+
+.card p {
+  font-size: 14px;
+  color: #666;
+  padding: 0 10px 15px;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+}
+
+.logo {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.logo i {
+  font-size: 22px;
+  color: #f9fafb; /* cor clara para combinar com o menu */
+}
+
+/*
+
+.container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      resize: vertical;
+    }
+
+    .alternativas {
+      margin-top: 20px;
+    }
+
+    .alternativa {
+      margin-bottom: 15px;
+    }
+
+    .alternativa label {
+      font-weight: normal;
+    }
+
+    .button {
+      margin-top: 25px;
+      background: #1f2937;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background: #111827;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+      margin-top: 8px;
+      align-items: center;
+    }
+
+    .row select {
+      flex: 1;
+      margin-top: 0;
+    }
+
+    .row .button {
+      padding: 10px 16px;
+      font-size: 14px;
+      margin-top: 0;
+    }
+
+    .save-btn {
+      background: #1f2937;
+    color: #fff;
+    padding: 15px 20px
+    }
+*/
