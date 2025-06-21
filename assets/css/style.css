@@ -43,9 +43,16 @@
     }
 
     .nav-link:hover {
-      background-color: #374151;
+      background-color: #374151; 
       color: white;
     }
+
+    /* listar hovers
+    .nav-link.active {
+    background-color: #1f2937;
+    color: white;
+    }
+    */
 
     /* Main */
     .main {
@@ -66,9 +73,7 @@
       z-index: 5;
     }
 
-    .user-menu {
-      position: relative;
-    }
+    .user-menu {position: relative;}
 
     .user-button {
       background: none;
@@ -80,9 +85,7 @@
       gap: 8px;
     }
 
-    .user-button i {
-      font-size: 14px;
-    }
+    .user-button i {font-size: 14px;}
 
     .dropdown {
       position: absolute;
@@ -105,13 +108,9 @@
       transition: background 0.3s;
     }
 
-    .dropdown a:hover {
-      background-color: #f0f0f0;
-    }
+    .dropdown a:hover {background-color: #f0f0f0;}
 
-    .user-menu.open .dropdown {
-      display: flex;
-    }
+    .user-menu.open .dropdown {display: flex;}
 
     /* Conteúdo com position absolute, centralizado */
     .content {
@@ -126,7 +125,6 @@
       height: calc(100% - 80px);
       border-radius: 8px;
       padding: 30px;
-
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -143,9 +141,7 @@
   margin-top: 30px;
 }
 
-.card a{
-  text-decoration: none;
-}
+.card a{text-decoration: none;}
 
 .card {
   width: 270px;
@@ -195,96 +191,7 @@
   color: #f9fafb; /* cor clara para combinar com o menu */
 }
 
-/*
-
-.container {
-      max-width: 700px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      text-align: center;
-      color: #333;
-    }
-
-    label {
-      display: block;
-      margin-top: 20px;
-      font-weight: 600;
-      color: #444;
-    }
-
-    textarea, select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 8px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-      resize: vertical;
-    }
-
-    .alternativas {
-      margin-top: 20px;
-    }
-
-    .alternativa {
-      margin-bottom: 15px;
-    }
-
-    .alternativa label {
-      font-weight: normal;
-    }
-
-    .button {
-      margin-top: 25px;
-      background: #1f2937;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .button:hover {
-      background: #111827;
-    }
-
-    .row {
-      display: flex;
-      gap: 10px;
-      margin-top: 8px;
-      align-items: center;
-    }
-
-    .row select {
-      flex: 1;
-      margin-top: 0;
-    }
-
-    .row .button {
-      padding: 10px 16px;
-      font-size: 14px;
-      margin-top: 0;
-    }
-
-    .save-btn {
-      background: #1f2937;
-    color: #fff;
-    padding: 15px 20px
-    }
-*/
-
-#cadastro_questoes
-{
-  width: 90%;
-}
+#cadastro_questoes{width: 90%;}
 
 label {
       font-weight: 600;
@@ -308,9 +215,7 @@ label {
       outline: none;
     }
 
-    .enunciado {
-      margin-bottom: 25px;
-    }
+    .enunciado {margin-bottom: 25px;}
 
     .alternativas {
       display: flex;
@@ -319,25 +224,8 @@ label {
       margin-bottom: 30px;
     }
 
-    .alternativa {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-
-    .alternativa input[type="radio"] {
-      appearance: none;
-      width: 20px;
-      height: 20px;
-      border: 2px solid #4f46e5;
-      border-radius: 50%;
-      position: relative;
-      margin-top: 6px;
-      cursor: pointer;
-    }
-
     select {
-      width: 100%;
+      width: 80%;
       padding: 10px;
       border-radius: 10px;
       border: 1px solid #ccc;
@@ -375,9 +263,7 @@ label {
       align-items: center;
     }
 
-    .select-inline select {
-      flex: 1;
-    }
+    .select-inline select {flex: 1;}
 
     .select-inline button {
       padding: 8px 12px;
@@ -394,23 +280,18 @@ label {
       background-color: #1f2937;
     }
 
-   .botoes {
-  display: flex;
-  gap: 20px;
-  justify-content: center; /* Centraliza os botões */
-  margin-top: 20px;
-}
+   .botoes {margin-top: 20px;}
 
 .botoes button {
-  width: 150px; /* Tamanho fixo */
-  padding: 10px 0;
-  font-size: 15px;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  text-align: center;
+  width: 150px;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
 }
 
 .salvar {
@@ -418,17 +299,9 @@ label {
   color: white;
 }
 
-.salvar:hover {
-  background-color: #374151;
-}
+.salvar:hover {background-color: #374151;}
 
-.cancelar:hover {
-  background-color: #b91c1c;
-}
-
-.alternativa-correta {
-  margin-bottom: 30px;
-}
+.alternativa-correta {margin-bottom: 30px;}
 
 .alternativa-correta label {
   font-weight: 600;
@@ -455,7 +328,7 @@ label {
     }
 
     .search-bar input:focus {
-      border-color: #3b82f6;
+      border-color: #1f2937;
       outline: none;
     }
 
@@ -500,18 +373,14 @@ label {
       color: white;
     }
 
-    .edit-btn:hover {
-      background-color: #2563eb;
-    }
+    .edit-btn:hover {background-color: #2563eb;}
 
     .delete-btn {
       background-color: #ef4444;
       color: white;
     }
 
-    .delete-btn:hover {
-      background-color: #dc2626;
-    }
+    .delete-btn:hover {background-color: #dc2626;}
 
 .modal1,
 .modal2{
@@ -580,10 +449,12 @@ label {
 .modal-footer {
   padding: 2px 16px;
   color: #d1d5db;
+  border-top: 1px solid rgb(0, 0, 0, 0.3);
 }
 
 input[type="text"]
 {
+  margin-bottom: 3%;
   width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -605,4 +476,36 @@ input[type="text"]
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s ease;
+    margin-top: 1%;
+}
+
+#alert_box {
+  font-family: Verdana, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 5; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0; /* Full width */
+  padding: 40px;
+  background-color: red;
+  color: white;
+  width: 90%;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
 }

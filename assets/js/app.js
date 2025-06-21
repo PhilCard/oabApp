@@ -1,15 +1,4 @@
 
-function toggleMenu() {
-        document.getElementById('userMenu').classList.toggle('open');
-      }
-
-      document.addEventListener('click', function (e) {
-        const menu = document.getElementById('userMenu');
-        if (!menu.contains(e.target)) {
-          menu.classList.remove('open');
-        }
-      });
-
 let modal_1 = document.getElementById("modal_assunto");
 let modal_2 = document.getElementById('modal_disciplina')
 let modal_assunto = document.getElementById("btn_assunto");
@@ -17,9 +6,47 @@ let modal_disciplina = document.getElementById('btn_disciplina');
 let span = document.getElementsByClassName("close")[0];
 let span2 = document.getElementsByClassName('close')[1];
 
+
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("../actions/select_disciplina.php")
+        .then(response => response.json())
+        .then(disciplinas => {
+            const selectDisciplina = document.getElementById("disciplina");
+            const selectAssunto = document.getElementById("assunto");
+
+            disciplinas.forEach(d => {
+                const opt = document.createElement("option");
+                opt.value = d.idDisciplina;
+                opt.textContent = d.campoDisciplina;
+                selectDisciplina.appendChild(opt);
+            });
+
+            selectDisciplina.addEventListener("change", () => {
+                selectAssunto.innerHTML = "";
+
+                const selectedId = selectDisciplina.value;
+                const encontrado = disciplinas.find(d => d.idDisciplina === selectedId);
+
+                if (encontrado) {
+                    const opt = document.createElement("option");
+                    opt.value = encontrado.idAssunto; // 👈 Envia o ID
+                    opt.textContent = encontrado.campoAssunto; // 👈 Mostra o nome
+                    selectAssunto.appendChild(opt);
+                } else {
+                    selectAssunto.innerHTML = "<option>Selecione uma disciplina primeiro</option>";
+                }
+            });
+        })
+        .catch(error => {
+            console.error("Erro ao carregar disciplinas:", error);
+        });
+});
+
+
+
 // When the user clicks the button, open the modal 
 modal_assunto.onclick = function() {
-  modal_1.style.display = "block";
+    modal_1.style.display = "block";
 }
 
 modal_disciplina.onclick = function()
@@ -29,14 +56,19 @@ modal_disciplina.onclick = function()
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-  modal_1.style.display = "none";
+    modal_1.style.display = "none";
 }
 
 span2.onclick = function() {
-  modal_2.style.display = "none";
+    modal_2.style.display = "none";
 }
 
-/*
+
+
+
+
+
+
 document.getElementById('cadastro_questoes').addEventListener('submit', function(event){
 
     let enunciado_input = document.getElementById('enunciado').value.trim();
@@ -95,4 +127,3 @@ document.getElementById('cadastro_questoes').addEventListener('submit', function
     }
 
 });
-*/

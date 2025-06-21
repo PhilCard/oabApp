@@ -11,27 +11,16 @@
   <!-- Sidebar -->
     <aside class="sidebar">
       <h2 class="logo"> <img src="assets/img/logo-top.svg"> OAB App</h2>
-      <a href="index.html" class="nav-link"> <i class="fas fa-home"> </i> Home</a>
+      <a href="index.php" class="nav-link"> <i class="fas fa-home"> </i> Home</a>
+      <a href="consultar/" class="nav-link"> <i class="fas fa-search"></i> </i> Consultar</a>
+      <a href="#" class="nav-link"> <i class="fas fa-book"></i> Artigos</a>
       <a href="config.php" class="nav-link"> <i class="fas fa-cog"> </i> Configurações</a>
     </aside>
 
-    <!-- Área principal -->
     <div class="main">
       <!-- Topbar -->
-      <nav class="navbar">
-        <div class="user-menu" id="userMenu">
-          <button class="user-button" onclick="toggleMenu()">
-            <i class="fas fa-user-circle"></i> Admin
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="dropdown" id="dropdownMenu">
-            <a href="#"><i class="fas fa-user"></i> Perfil: Admin</a>
-            <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
-          </div>
-        </div>
-      </nav>
+      <?php require_once 'inc/side_nav_bar.php';?>
 
-      <!-- Conteúdo -->
       <div class="content">
         <h1>Bem-vindo ao OAB App</h1>
         
@@ -61,9 +50,6 @@
 
       </div>
     </div>
-
-     
-
-    <script src="assets/js/app.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
