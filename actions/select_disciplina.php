@@ -22,18 +22,4 @@
 
     header('Content-Type: application/json');
     echo json_encode($disciplinas);
-
-    /*
-   if(mysqli_num_rows($result) > 0)
-   {
-        while($row = mysqli_fetch_assoc($result))
-        {
-            echo 'id :' . $row['idDisciplina'] . '<br />' . 'campoDisciplina :' . $row['campoDisciplina'] . '<br />' . 'idAssunto :' . $row['idAssunto'] . '<br />';
-        }
-   }
-   else
-   {
-        echo "0 results";
-   }
-    */
 ?>

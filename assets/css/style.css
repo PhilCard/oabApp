@@ -195,6 +195,7 @@
 
 label {
       font-weight: 600;
+      margin-top: 15px;
       margin-bottom: 8px;
       display: inline-block;
     }
@@ -383,22 +384,24 @@ label {
     .delete-btn:hover {background-color: #dc2626;}
 
 .modal1,
-.modal2{
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+.modal2,
+.edit-questoes{
+  display: none; 
+  position: fixed; 
+  z-index: 1;
+  padding-top: 100px; 
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%; 
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
 }
 
-/* Modal Content */
+
 .modal-content {
+  border-radius: 10px;
   position: relative;
   background-color: #fefefe;
   margin: auto;
@@ -439,7 +442,9 @@ label {
 }
 
 .modal-header {
-  padding: 2px 16px;
+  border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px 16px;
   background-color: #1f2937;
   color: #d1d5db;
 }
@@ -447,6 +452,7 @@ label {
 .modal-body {padding: 2px 16px;}
 
 .modal-footer {
+  margin-top: 2%;
   padding: 2px 16px;
   color: #d1d5db;
   border-top: 1px solid rgb(0, 0, 0, 0.3);
@@ -464,7 +470,8 @@ input[type="text"]
     transition: border 0.3s;
 }
 
-#salvar_assunto
+#salvar_assunto,
+#salvar_disciplina
 {
   font-family: 'Titillium Web', sans-serif;
     padding: 12px;
@@ -477,6 +484,12 @@ input[type="text"]
     cursor: pointer;
     transition: background 0.3s ease;
     margin-top: 1%;
+}
+
+#salvar_assunto:hover,
+#salvar_disciplina:hover
+{
+  background-color: #374151;
 }
 
 #alert_box {

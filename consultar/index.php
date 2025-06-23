@@ -26,49 +26,38 @@
         <input type="text" placeholder="Pesquisar disciplina...">
       </div>
 
+      <?php require_once '../actions/edit_quest.php'; ?>
+      <?php require_once '../actions/lista_consulta.php'; ?>
+      
       <div class="table-container">
         <table>
           <thead>
             <tr>
+              <th>N° Questão</th>
               <th>Disciplina</th>
               <th>Assunto</th>
-              <th>Data</th>
               <th>Ações</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Direito Constitucional</td>
-              <td>Controle de Constitucionalidade</td>
-              <td>07/05/2025</td>
-              <td>
-                <button class="action-btn edit-btn">Editar</button>
-                <button class="action-btn delete-btn">Excluir</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Ética Profissional</td>
-              <td>Prerrogativas do Advogado</td>
-              <td>08/05/2025</td>
-              <td>
-                <button class="action-btn edit-btn">Editar</button>
-                <button class="action-btn delete-btn">Excluir</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Direito Penal</td>
-              <td>Crimes contra a vida</td>
-              <td>10/05/2025</td>
-              <td>
-                <button class="action-btn edit-btn">Editar</button>
-                <button class="action-btn delete-btn">Excluir</button>
-              </td>
-            </tr>
+            <?php foreach($lista_tabela_consulta as $lista):?>
+              <tr>
+                <td><?=$lista['idQuestoes']?></td>
+                <td><?=$lista['campoDisciplina']?></td>
+                <td><?=$lista['campoAssunto']?></td>
+                <td>
+                  <button id="edit-btn-<?=$lista['idQuestoes']?>" class="action-btn edit-btn">Editar</button>
+                  <button class="action-btn delete-btn">Excluir</button>
+                </td>
+              </tr>
+            <?php endforeach; ?>
           </tbody>
         </table>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/edit_quest.js"></script>
+    <!--<script src="../assets/js/app.js"></script>-->
   </body>
 </html>
