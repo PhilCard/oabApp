@@ -26,7 +26,7 @@
         <input type="text" placeholder="Pesquisar disciplina...">
       </div>
 
-      <?php require_once '../actions/edit_quest.php'; ?>
+      <?php require_once '../inc/modal_edit.php'; ?>
       <?php require_once '../actions/lista_consulta.php'; ?>
       
       <div class="table-container">

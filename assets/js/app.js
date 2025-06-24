@@ -1,75 +1,64 @@
+$(document).ready(function () {
+    $.ajax({
+        url: "../actions/select_disciplina.php",
+        type: "GET",
+        dataType: "json",
+        success: function (disciplinas) {
+            const $selectDisciplina = $("#disciplina");
+            const $selectAssunto = $("#assunto");
 
-let modal_1 = document.getElementById("modal_assunto");
-let modal_2 = document.getElementById('modal_disciplina')
-let modal_assunto = document.getElementById("btn_assunto");
-let modal_disciplina = document.getElementById('btn_disciplina');
-let span = document.getElementsByClassName("close")[0];
-let span2 = document.getElementsByClassName('close')[1];
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    fetch("../actions/select_disciplina.php")
-        .then(response => response.json())
-        .then(disciplinas => {
-            const selectDisciplina = document.getElementById("disciplina");
-            const selectAssunto = document.getElementById("assunto");
-
-            disciplinas.forEach(d => {
-                const opt = document.createElement("option");
-                opt.value = d.idDisciplina;
-                opt.textContent = d.campoDisciplina;
-                selectDisciplina.appendChild(opt);
+            // Preenche o select de disciplinas
+            $.each(disciplinas, function (index, d) {
+                $selectDisciplina.append(
+                    $("<option>", {
+                        value: d.idDisciplina,
+                        text: d.campoDisciplina
+                    })
+                );
             });
+    
+            $selectDisciplina.on("change", function () {
+                $selectAssunto.empty();
 
-            selectDisciplina.addEventListener("change", () => {
-                selectAssunto.innerHTML = "";
-
-                const selectedId = selectDisciplina.value;
+                const selectedId = $(this).val();
                 const encontrado = disciplinas.find(d => d.idDisciplina === selectedId);
 
                 if (encontrado) {
-                    const opt = document.createElement("option");
-                    opt.value = encontrado.idAssunto; // 👈 Envia o ID
-                    opt.textContent = encontrado.campoAssunto; // 👈 Mostra o nome
-                    selectAssunto.appendChild(opt);
-                } else {
-                    selectAssunto.innerHTML = "<option>Selecione uma disciplina primeiro</option>";
+                    $selectAssunto.append(
+                        $("<option>", {
+                            value: encontrado.idAssunto,
+                            text: encontrado.campoAssunto
+                        })
+                    );
                 }
             });
-        })
-        .catch(error => {
+        },
+        error: function (xhr, status, error) {
             console.error("Erro ao carregar disciplinas:", error);
-        });
+        }
+    });
 });
 
 
+$("#btn_assunto").click(function() {
+    $('#modal_assunto').show();
+});
 
-// When the user clicks the button, open the modal 
-modal_assunto.onclick = function() {
-    modal_1.style.display = "block";
-}
-
-modal_disciplina.onclick = function()
-{
-    modal_2.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal_1.style.display = "none";
-}
-
-span2.onclick = function() {
-    modal_2.style.display = "none";
-}
+$(".close").eq(0).on("click", function () {
+  $('#modal_assunto').hide();
+});
 
 
+$("#btn_disciplina").click(function() {
+    $('#modal_disciplina').show();
+});
+
+$(".close").eq(1).on("click", function () {
+  $('#modal_disciplina').hide();
+});
 
 
-
-
-
-document.getElementById('cadastro_questoes').addEventListener('submit', function(event){
+document.getElementById('cadastro_questoes').addEventListener('submit', function(event){ //separar em um script, já que irei usar duas vezes, uma no insert questoes e outra no edit
 
     let enunciado_input = document.getElementById('enunciado').value.trim();
     let alt_a_input = document.getElementById('alt_a').value.trim();
