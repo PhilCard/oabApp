@@ -305,7 +305,7 @@ label {
 
     .select-inline button {
       padding: 8px 12px;
-      font-size: 13px;
+      font-size: 15px;
       border: none;
       border-radius: 8px;
       background-color: #1f2937;
@@ -326,7 +326,6 @@ label {
   margin-bottom: 8px;
   display: block;
 }
-
 
 .search-bar {
       max-width: 500px;

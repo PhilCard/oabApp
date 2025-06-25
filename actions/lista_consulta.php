@@ -3,7 +3,8 @@
     require_once '../inc/db.php';
 
     $sql = "SELECT 
-            questoesOab.idQuestoes, 
+            questoesOab.idQuestoes,
+            questoesOab.campoNumQuestao, 
             disciplina.campoDisciplina, 
             assunto.campoAssunto 
         FROM questoesOab 

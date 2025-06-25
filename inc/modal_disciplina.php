@@ -8,7 +8,7 @@
       </div>
       <div class="modal-body">
         <label for="Nova disciplina">Nova Disciplina</label>
-        <input type="text" id="" placeholder="Ex: Mandado de Segurança">
+        <input type="text" id="" placeholder="Digite a nova disciplina" autocomplete="off">
         <select id="disciplina">
           <?php foreach($assuntos as $assunto): ?>
             <option value="0" disabled selected>Selecione o assunto</option>

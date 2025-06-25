@@ -11,7 +11,8 @@
             isset($_POST['c']) && !empty($_POST['c']) &&
             isset($_POST['d']) && !empty($_POST['d']) &&
             isset($_POST['correta']) && !empty($_POST['correta']) &&
-            isset($_POST['disciplina']) && isset($_POST['assunto'])
+            isset($_POST['disciplina']) && isset($_POST['assunto']) &&
+            isset($_POST['num_questao']) && isset($_POST['num_questao'])
         ) 
         {
             $idDisc = (int) $_POST['disciplina'];
@@ -22,14 +23,15 @@
             $c = trim($_POST['c']);
             $d = trim($_POST['d']);
             $correta = trim($_POST['correta']);
+            $n_questao = (int) trim($_POST['num_questao']);
 
             $stmt = $conn->prepare("INSERT INTO questoesOab 
-                (idDisciplina, idAssunto, campoEnunciado, campoAlternativaA, campoAlternativaB, campoAlternativaC, campoAlternativaD, alternativaCorreta) 
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)"); //a interpolação não deve ser feita aqui, preciso deixar os pontos de interrogação para o bind_param agir
+                (idDisciplina, idAssunto, campoEnunciado, campoAlternativaA, campoAlternativaB, campoAlternativaC, campoAlternativaD, alternativaCorreta, campoNumQuestao) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"); //a interpolação não deve ser feita aqui, preciso deixar os pontos de interrogação para o bind_param agir
 
             if ($stmt) 
             {
-                $stmt->bind_param("iissssss", $idDisc, $idAss, $enunciado, $a, $b, $c, $d, $correta); //aqui é o campo correto de interpolar
+                $stmt->bind_param("iissssssi", $idDisc, $idAss, $enunciado, $a, $b, $c, $d, $correta, $n_questao); //aqui é o campo correto de interpolar
 
                 if ($stmt->execute()) 
                 {

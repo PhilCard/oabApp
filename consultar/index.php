@@ -26,7 +26,6 @@
         <input type="text" placeholder="Pesquisar disciplina...">
       </div>
 
-      <?php require_once '../inc/modal_edit.php'; ?>
       <?php require_once '../actions/lista_consulta.php'; ?>
       
       <div class="table-container">
@@ -42,7 +41,7 @@
           <tbody>
             <?php foreach($lista_tabela_consulta as $lista):?>
               <tr>
-                <td><?=$lista['idQuestoes']?></td>
+                <td><?=$lista['campoNumQuestao']?></td>
                 <td><?=$lista['campoDisciplina']?></td>
                 <td><?=$lista['campoAssunto']?></td>
                 <td>
@@ -55,6 +54,7 @@
         </table>
       </div>
     </div>
+    <?php require_once '../inc/modal_edit.php'; ?>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/edit_quest.js"></script>

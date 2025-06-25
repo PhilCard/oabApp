@@ -8,22 +8,22 @@
 
     if (isset($_GET['action']) && $_GET['action'] === "lista-edit" && isset($_GET['id'])) {
 
-        $id_list = $_GET['id']; // ⚠️ Ainda inseguro, só para teste
+        $id_list = $_GET['id']; // Ainda inseguro, só para teste
 
         $sql = 'SELECT * FROM questoesOab WHERE idQuestoes = ' . $id_list;
 
         $result = mysqli_query($conn, $sql);
 
         if ($result && mysqli_num_rows($result) > 0) {
-            $questoes_oab = mysqli_fetch_assoc($result); // Só 1 registro esperado
+            $questoes_oab = mysqli_fetch_assoc($result);
         } else {
-            http_response_code(404); // Se não encontrar
+            http_response_code(404);
             $questoes_oab = ["erro" => "Questão não encontrada"];
         }
 
         mysqli_close($conn);
     } else {
-        http_response_code(400); // Parâmetros inválidos
+        http_response_code(400);
         $questoes_oab = ["erro" => "Requisição inválida"];
     }
 

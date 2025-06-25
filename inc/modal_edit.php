@@ -1,4 +1,5 @@
-<form action="#" method="POST"> 
+<?php require_once '../actions/edit_quest.php'; ?>
+<form id="form_edit" action="#" method="post"> 
   <div id="modal_edit" class="edit-questoes">
     <div class="modal-content" style="width:60%">
       <div class="modal-header">
@@ -38,16 +39,19 @@
             <option value="D">Alternativa D</option>
           </select>
         </div>
+        
         <div id="text-danger"></div>
+        <label> digite o N° da questão: </label>
+        <div style="width: 200px;">
+          <input id="n_questao" name="num_questao" type="text" placeholder="n° da questão" autocomplete="off"/>
+        </div>
       </div>
 
       <div class="modal-footer">
-        <div class="botoes">
-          <button type="submit" id="salva" class="salvar button">Salvar</button>
+        <div class="botoes" style="">
+          <button type="submit" id="btn-salvar-edicao" class="salvar button">Salvar</button>
         </div>
       </div>
     </div>
   </div>
 </form>
-
-<?php //utilizar ajax para pegar o parametro no get ?action=edit&id=variavel_com_id ?>

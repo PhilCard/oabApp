@@ -41,17 +41,21 @@
     </div>
   </div>
 
-    <div class="alternativa-correta">
-      <label for="correta">Alternativa Correta:</label>
-      <select id="correta" name="correta">
-        <option value="0" disabled selected>Selecione a alternativa correta</option>
-        <option value="A">Alternativa A</option>
-        <option value="B">Alternativa B</option>
-        <option value="C">Alternativa C</option>
-        <option value="D">Alternativa D</option>
-      </select>
-    </div>
+  <div class="alternativa-correta">
+    <label for="correta">Alternativa Correta:</label>
+    <select id="correta" name="correta">
+      <option value="0" disabled selected>Selecione a alternativa correta</option>
+      <option value="A">Alternativa A</option>
+      <option value="B">Alternativa B</option>
+      <option value="C">Alternativa C</option>
+      <option value="D">Alternativa D</option>
+    </select>
+  </div>
 
+  <label> digite o N° da questão: </label>
+  <div style="width: 200px;">
+    <input id="n_questao" name="num_questao" type="text" placeholder="n° da questão" autocomplete="off"/>
+  </div>
   <div class="botoes">
     <button type="submit" id="salva" class="salvar button">Salvar</button>
   </div>

@@ -60,14 +60,16 @@ $(".close").eq(1).on("click", function () {
 
 document.getElementById('cadastro_questoes').addEventListener('submit', function(event){ //separar em um script, já que irei usar duas vezes, uma no insert questoes e outra no edit
 
+    let disciplina_cmb = document.getElementById('disciplina').value;
+    let assunto_cmb = document.getElementById('assunto').value;
     let enunciado_input = document.getElementById('enunciado').value.trim();
     let alt_a_input = document.getElementById('alt_a').value.trim();
     let alt_b_input = document.getElementById('alt_b').value.trim();
     let alt_c_input = document.getElementById('alt_c').value.trim();
     let alt_d_input = document.getElementById('alt_d').value.trim();
     let correta_cmb = document.getElementById('correta').value.trim();
-    let disciplina_cmb = document.getElementById('disciplina').value;
-    let assunto_cmb = document.getElementById('assunto').value;
+    let n_questao = document.getElementById('n_questao').value.trim();
+    
 
     if(!enunciado_input == '')
     {
@@ -106,6 +108,12 @@ document.getElementById('cadastro_questoes').addEventListener('submit', function
         else if(assunto_cmb == '0')
         {
             alert('selecionar assunto');
+            event.preventDefault();
+        }
+
+        else if(n_questao == '')
+        {
+            alert('preencher n questão');
             event.preventDefault();
         }
     }

@@ -5,6 +5,7 @@
     <title>OAB App</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
   </head>
 
   <body>

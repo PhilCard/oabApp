@@ -7,7 +7,7 @@
       </div>
       <div class="modal-body">
         <label for="novo-assunto">Novo Assunto</label>
-        <input type="text" id="novo-assunto" placeholder="Ex: Mandado de Segurança">
+        <input type="text" id="novo-assunto" placeholder="Digite o novo assunto" autocomplete="off">
       </div>
       <div class="modal-footer">
         <button id="salvar_assunto" class="button">Salvar</button>
