@@ -8,17 +8,33 @@
 
     if (isset($_GET['action']) && $_GET['action'] === "lista-edit" && isset($_GET['id'])) {
 
-        $id_list = $_GET['id']; // Ainda inseguro, só para teste
+        $id_list = $_GET['id'];
 
-        $sql = 'SELECT * FROM questoesOab WHERE idQuestoes = ' . $id_list;
+        if (!ctype_digit($id_list)) {
+            http_response_code(400);
+            echo json_encode(["erro" => "ID inválido"]);
+            exit;
+        }
 
-        $result = mysqli_query($conn, $sql);
+        $sql = 'SELECT * FROM questoesOab WHERE idQuestoes = ?';
+        $stmt = mysqli_prepare($conn, $sql);
 
-        if ($result && mysqli_num_rows($result) > 0) {
-            $questoes_oab = mysqli_fetch_assoc($result);
+        if ($stmt) {
+            mysqli_stmt_bind_param($stmt, 'i', $id_list);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+
+            if ($result && mysqli_num_rows($result) > 0) {
+                $questoes_oab = mysqli_fetch_assoc($result);
+            } else {
+                http_response_code(404);
+                $questoes_oab = ["erro" => "Questão não encontrada"];
+            }
+
+            mysqli_stmt_close($stmt);
         } else {
-            http_response_code(404);
-            $questoes_oab = ["erro" => "Questão não encontrada"];
+            http_response_code(500);
+            $questoes_oab = ["erro" => "Erro na preparação da consulta"];
         }
 
         mysqli_close($conn);

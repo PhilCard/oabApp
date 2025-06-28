@@ -1,4 +1,4 @@
-<form id="cadastro_questoes" action="../actions/insert_questions.php" method="POST">
+<form id="cadastro_questoes" action="../actions/insert_questoes.php" method="POST">
   <div class="selects">
     <div class="select-group">
       <label for="disciplina">Disciplina:</label>

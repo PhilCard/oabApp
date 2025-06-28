@@ -2,7 +2,7 @@ $('.table-container').on('click', 'button', function() {
     let text = $(this).attr('id');
     let id = text.replace('edit-btn-', '');
     $('#modal_edit').show();
-    $("#btn-salvar-edicao").data("id", id)
+    $("#btn-salvar-edicao").data("id", id);
     
     $.ajax({
         url: '../actions/lista_questoes.php',
@@ -32,5 +32,35 @@ $(".close").eq(0).on("click", function () {
 $("#form_edit").on("submit", function(e) {
     e.preventDefault();
     let id = $('#btn-salvar-edicao').data("id");
-    window.location = 'index.php?action=edit&id=' + id;
+    let url = '../actions/edit_questoes.php?action=edit&id=' + id;
+
+    $.ajax({
+        url: url,
+        type: "POST",
+        dataType: "TEXT",
+        data:{
+            id: id,
+            enunciado: $('#enunciado').val(),
+            a: $('#alt_a').val(),
+            b: $('#alt_b').val(),
+            c: $('#alt_c').val(),
+            d: $('#alt_d').val(),
+            correta: $('#correta').val(),
+            num_questao : $('#n_questao').val()
+        } 
+    ,
+        /*
+        beforeSend: function () {
+            $("#spResultado").html("Processando...");
+        },*/
+
+        success: function (data) {
+            console.log(data);
+        },
+        error: function (error) {
+            console.log(error);
+        },
+        complete: function () {}
+    });
+
 });

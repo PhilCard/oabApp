@@ -1,4 +1,3 @@
-<?php require_once '../actions/edit_quest.php'; ?>
 <form id="form_edit" action="#" method="post"> 
   <div id="modal_edit" class="edit-questoes">
     <div class="modal-content" style="width:60%">
