@@ -70,6 +70,7 @@ document.getElementById('cadastro_questoes').addEventListener('submit', function
     let correta_cmb = document.getElementById('correta').value.trim();
     let n_questao = document.getElementById('n_questao').value.trim();
     
+    //usar classe e [] igual no span close, pegar o array DOM para exibir msg de erro 
 
     if(!enunciado_input == '')
     {
