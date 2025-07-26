@@ -57,8 +57,6 @@
     </div>
     <?php require_once '../inc/modal_edit.php'; ?>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/edit_quest.js"></script>
-    <!--<script src="../assets/js/app.js"></script>-->
+    <script src="../assets/js/edit_questoes.js"></script>
   </body>
 </html>

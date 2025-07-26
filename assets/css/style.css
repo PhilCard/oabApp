@@ -15,12 +15,8 @@ body
 
 body,
 .nav-link,
-.user-button,
 .content,
 .logo,
-.alternativas,
-.selects,
-.select-inline,
 .search-bar
 {
   display: flex;
@@ -48,10 +44,8 @@ aside
   color: #f9fafb; /* cor clara para combinar com o menu */
 }
 
-.sidebar h2,
 .card,
 .logo,
-.botoes button,
 th, td
 {
   text-align: center;
@@ -78,51 +72,25 @@ th, td
   color: white;
 }
 
-i{
-  padding: 2px;
-}
+i{padding: 2px;}
 
-a{
-  text-decoration: none;
-}
-
-
-
-button 
-{
-  background: #1f2937;
-  color: #fff;
-  padding: 15px 0;
-    font-size: 16px;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-    cursor: pointer;
-}
-
-button:hover{background-color: #374151;}
-
-/* <----------------CONTINUAR A PARTIR DAQUI ------------->*/
+a{text-decoration: none;}
 
 .content 
 {
-      position: absolute;
-      top: 60px;
-      left: 220px;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      width: calc(100% - 240px);
-      max-width: 1200px;
-      height: calc(100% - 80px);
-      border-radius: 8px;
-      padding: 30px;
-      flex-direction: column; /*centralizar elementos com a mesma propriedade */
-      align-items: center;
-      overflow-y: auto;
-      z-index: 1;
+  position: absolute;
+  margin: auto;
+  width: calc(100% - 240px);
+  max-width: 1200px;
+  height: calc(100% - 80px);
+  border-radius: 8px;
+  padding: 30px;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  z-index: 1;
 }
+
 
 .card {
   width: 270px;
@@ -156,101 +124,32 @@ button:hover{background-color: #374151;}
 }
 
 
-#cadastro_questoes{width: 90%;}
+form{width: 90%;}
 
-label {
+label 
+{
       font-weight: 600;
       margin-top: 15px;
       margin-bottom: 8px;
       display: inline-block;
     }
 
-    textarea {
-      width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 10px;
-      resize: vertical;
-      font-size: 14px;
-      font-family: inherit;
-      transition: border 0.3s;
-    }
-
-    textarea:focus { /* centralizar focus, 3 elementos possuem as mesmas propriedades */
-      border-color: #1f2937;
-      outline: none;
-    }
-
-    .enunciado {margin-bottom: 25px;}
-
-    .alternativas {
-      flex-direction: column;
-      gap: 15px;
-      margin-bottom: 30px;
-    }
-
-    select {
-      width: 80%;
-      padding: 10px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      font-size: 14px;
-      transition: border 0.3s;
-      background-color: #fff;
-      appearance: none;
-    }
-
-    select:focus {
-      border-color: #1f2937;
-      outline: none;
-    }
-
-    .selects {
-      gap: 20px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-    }
-
-    .select-group {
-      flex: 1;
-      min-width: 250px;
-    }
-
-    .select-group label {
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .select-inline {
-      gap: 10px;
-      align-items: center;
-    }
-
-    .select-inline select {flex: 1;}
-
-    .select-inline button {
-      padding: 8px 12px;
-      font-size: 15px;
-      border: none;
-      border-radius: 8px;
-      background-color: #1f2937;
-      color: white;
-      transition: background-color 0.3s;
-    }
-
-.select-inline button:hover {background-color: #1f2937;}
-
-.botoes {margin-top: 20px;}
-
-.botoes button {width: 150px;}
-
-.alternativa-correta {margin-bottom: 30px;}
-
-.alternativa-correta label {
-  font-weight: 600;
-  margin-bottom: 8px;
-  display: block;
+textarea 
+{
+  width: 100%;
+  padding: 10px;
+  resize: vertical;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border 0.3s;
 }
+
+  textarea:focus 
+  {
+    border-color: #1f2937;
+    outline: none;
+  }
+
 
 .search-bar {
       max-width: 500px;

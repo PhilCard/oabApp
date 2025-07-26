@@ -2,7 +2,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <title>OAB App</title>
+    <title>OABapp | Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
@@ -10,7 +10,12 @@
   </head>
 
   <body>
-
+    <?php
+    /*
+      if(isset($_GET['action']) && $_GET['action'] == "logout"){
+          //echo '<p> olaola </p>';
+      }implementar no logout*/
+    ?>
     <aside class="bg-dark">
       <h2 class="logo"> <img src="assets/img/logo-top.svg"> OAB App</h2>
       <ul class="nav flex-column">
