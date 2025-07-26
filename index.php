@@ -31,6 +31,11 @@
         <li class="nav-item">
           <a href="config.php" class="nav-link"> <i class="fas fa-cog"> </i> Configurações</a>
         </li>
+
+         <li class="nav-item">
+            <a href="index.php?action=logout" class="nav-link"><i class="fas fa-sign-out-alt"></i> Sair</a>
+        </li>
+        
       </ul>
     </aside>
 
