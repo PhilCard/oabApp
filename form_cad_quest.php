@@ -4,8 +4,9 @@
             <select class="form-control" id="disciplina" name="disciplina">
                 <option value="0" disabled selected>Selecione a disciplina</option>
             </select>
-            <button class="btn btn-dark" id="btn_disciplina" type="button">+</button>
+            <button type="button" class="btn btn-dark" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#disciplina_modal">+</button>
         </div>
+        <p class="text-danger">Por favor, preencher campo obrigatório!</p>
     </div>
 
     <div class="form-group mt-3">
@@ -13,33 +14,39 @@
             <select class="form-control" id="assunto" name="assunto">
                 <option value="0" disabled selected>Selecione o assunto</option>
             </select>
-            <button class="btn btn-dark" id="btn_assunto" type="button">+</button>
+             <button type="button" class="btn btn-dark" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#assunto_modal">+</button>
         </div>
+        <p class="text-danger">Por favor, preencher campo obrigatório!</p>
     </div>
 
     <div class="form-group">
-        <label for="Enunciado">Enunciado</label>
+        <label for="enunciado">Enunciado</label>
         <textarea id="enunciado" name="enunciado" class="form-control" id="mensagem" rows="4"></textarea>
+        <p class="text-danger">Por favor, preencher campo obrigatório!</p>
     </div>
 
     <div class="form-group">
-        <label for="">alternativa A</label>
+        <label for="alt_a">alternativa A</label>
         <textarea class="form-control" id="alt_a" name="a"></textarea>
+        <p class="text-danger">Por favor, preencher campo obrigatório!</p>
     </div>
 
     <div class="form-group">
-        <label for="">alternativa B</label>
+        <label for="alt_b">alternativa B</label>
         <textarea class="form-control" id="alt_b" name="b"></textarea>
+        <p class="text-danger">Por favor, preencher campo obrigatório!</p>
     </div>
 
     <div class="form-group">
-        <label for="">alternativa C</label>
+        <label for="alt_c">alternativa C</label>
         <textarea class="form-control" id="alt_c" name="c"></textarea>
+        <p class="text-danger">Por favor, preencher campo obrigatório!</p>
     </div>
 
     <div class="form-group">
-        <label for="">alternativa D</label>
+        <label for="alt_d">alternativa D</label>
         <textarea class="form-control" id="alt_d" name="d"></textarea>
+        <p class="text-danger">Por favor, preencher campo obrigatório!</p>
     </div>
 
     <div class="form-group">
@@ -51,11 +58,13 @@
             <option value="C">Alternativa C</option>
             <option value="D">Alternativa D</option>
         </select>
+        <p class="text-danger">Por favor, preencher campo obrigatório!</p>
     </div>
 
     <div class="form-group">
-        <label for="usuario">N° questão</label>
+        <label for="n_questao">N° questão</label>
         <input class="form-control" type="text" id="n_questao" name="num_questao" autocomplete="off">
+        <p class="text-danger">Por favor, preencher campo obrigatório!</p>
     </div>
     <button type="submit" id="salva" class="btn btn-lg btn-dark">Cadastrar</button>
 </form>

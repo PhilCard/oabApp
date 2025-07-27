@@ -13,6 +13,17 @@ body
   position: relative;
 }
 
+.alert,
+.text-danger
+{
+  display: none;
+}
+
+.ativo {
+  display: block;
+}
+
+
 body,
 .nav-link,
 .content,
