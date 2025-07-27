@@ -1,4 +1,4 @@
-$('.table-container').on('click', 'button', function() {
+$('.table').on('click', 'button', function() {
     let text = $(this).attr('id');
     let id = text.replace('edit-btn-', '');
     $('#modal_edit').show();
@@ -23,10 +23,6 @@ $('.table-container').on('click', 'button', function() {
             console.log(err);
         }
     });
-});
-
-$(".close").eq(0).on("click", function () {
-  $('#modal_edit').hide();
 });
 
 $("#form_edit").on("submit", function(e) {

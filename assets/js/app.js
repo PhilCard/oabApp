@@ -40,24 +40,6 @@ $(document).ready(function () {
 });
 
 
-$("#btn_assunto").click(function() {
-    $('#modal_assunto').show();
-});
-
-$(".close").eq(0).on("click", function () {
-  $('#modal_assunto').hide();
-});
-
-
-$("#btn_disciplina").click(function() {
-    $('#modal_disciplina').show();
-});
-
-$(".close").eq(1).on("click", function () {
-  $('#modal_disciplina').hide();
-});
-
-
 document.getElementById('cadastro_questoes').addEventListener('submit', function(event){ //separar em um script, já que irei usar duas vezes, uma no insert questoes e outra no edit
 
     let disciplina_cmb = document.getElementById('disciplina').value;
